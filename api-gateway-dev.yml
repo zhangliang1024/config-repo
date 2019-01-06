@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: api-gateway
+
+zuul:
+  routes:
+      myProduct:
+        path: /myProduct/**
+        serviceId: product
+        sensitiveHeaders:
+
+  ignored-patterns:
+    - /product/product/listForOrder
+
+management:
+  security:
+    enabled: false
